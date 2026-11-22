@@ -8,6 +8,7 @@
 <link rel="canonical" href="https://liitos.ai/">
 <style>
 *{box-sizing:border-box}body{margin:0;background:#fff;color:#202321;font-family:Arial,Helvetica,sans-serif;-webkit-font-smoothing:antialiased}.page{max-width:1100px;margin:32px auto;padding:30px 32px 24px;background:#f5f4f0;border-radius:18px}header{display:flex;justify-content:space-between;align-items:center;padding:0 0 36px;border-bottom:1px solid #d9d9d2}.brand{font-size:38px;font-weight:700;letter-spacing:-1.8px}.location{font-size:14px;color:#686b67}main{padding-top:64px}h1{font-size:clamp(30px,4.1vw,48px);line-height:1.18;font-weight:500;letter-spacing:-1.5px;margin:0 0 28px}p{font-size:18px;line-height:1.65;margin:0 0 24px}.backing{color:#6d706b;font-size:17px;margin:38px 0 30px}.careers{border-top:1px solid #d9d9d2;padding-top:30px}h2{font-size:20px;font-weight:500;margin:0 0 20px}nav{display:flex;gap:30px;flex-wrap:wrap;margin:24px 0 30px}a{color:inherit;text-underline-offset:5px;text-decoration-thickness:1px;font-size:18px}a:hover{text-decoration-thickness:2px}a:focus-visible{outline:2px solid #355d43;outline-offset:6px}footer{border-top:1px solid #d9d9d2;padding-top:24px;display:flex;justify-content:space-between;gap:16px;color:#747770;font-size:13px}@media(max-width:650px){.page{margin:16px;padding:24px 22px;border-radius:12px}header{padding-bottom:24px}.brand{font-size:32px}.location{font-size:11px}main{padding-top:36px}h1{letter-spacing:-.8px}p{font-size:16px}.backing{font-size:15px}footer{flex-wrap:wrap}nav a{min-height:44px;display:inline-flex;align-items:center}}
+.contact{margin:24px 0 30px;min-height:44px;display:flex;align-items:center}.contact button{border:0;padding:0;background:transparent;font:inherit;font-size:18px;color:inherit;text-decoration:underline;text-underline-offset:5px;cursor:pointer}.contact button:focus-visible{outline:2px solid #355d43;outline-offset:6px}.contact button:hover{text-decoration-thickness:2px}.contact span{font-size:18px}.contact [hidden]{display:none}
 </style>
 </head>
 <body>
@@ -21,10 +22,17 @@
 <section class="careers" aria-labelledby="careers-heading">
 <h2 id="careers-heading">Work with us</h2>
 <p>We're building a lean team of researchers and engineers. If you've published AI benchmarks, scaled synthetic data generation, or worked on reinforcement learning, post-training, evaluation infrastructure, or real-world enterprise data, we'd love to hear from you.</p>
-<nav aria-label="Contact Liitos"><a href="mailto:adit@liitos.ai">Get in touch ↗</a><a href="mailto:adit@liitos.ai?subject=Careers%20at%20Liitos">Careers ↗</a></nav>
+<div class="contact" aria-live="polite"><button id="reveal-email" type="button" aria-controls="contact-email" aria-expanded="false">Get in touch ↗</button><span id="contact-email" hidden>adit@liitos.ai</span><noscript>adit@liitos.ai</noscript></div>
 </section>
 </main>
 <footer><span>© 2026 Liitos</span><span>San Francisco, CA</span></footer>
 </div>
+<script>
+document.getElementById('reveal-email').addEventListener('click', function () {
+  document.getElementById('contact-email').hidden = false;
+  this.setAttribute('aria-expanded', 'true');
+  this.hidden = true;
+});
+</script>
 </body>
 </html>
